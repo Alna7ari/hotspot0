@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+ <html class="no-js" lang="en" > <!--<![endif]-->
+<head>  	
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="author" content="me"/>
+     <link rel="icon" type="image/png" href="img/favicon.png" />
+    <title>شبكة اسكندر اللاسلكية</title>
+    <!-- Bootstrap core CSS -->
+   <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="login.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <!-- Custom styles for this template -->
+    <link href="login.css" rel="stylesheet">
+    <link href="css/animate-custom.css" rel="stylesheet">
+    <script language="JavaScript">
+<!--
+    function openLogin() {
+	if (window.name != 'hotspot_logout') return true;
+	open('$(link-login)', '_blank', '');
+	window.close();
+	return false;
+    }
+//-->
+</script>
+    
+	<script language="JavaScript">
+
+function readablizeBytes(bytes) {
+var s = ['bytes', 'kb', 'MB', 'GB', 'TB', 'PB'];
+var e = Math.floor(Math.log(bytes)/Math.log(1024));
+return (bytes/Math.pow(1024, Math.floor(e))).toFixed(2)+" "+s[e];
+}
+
+</script>
+<script language="JavaScript">
+
+function readablizeBytes(bytes) {
+var s = ['&#1576;&#1575;&#1610;&#1578;', '&#1603;&#1610;&#1604;&#1608;&#1576;&#1575;&#1610;&#1578;', '&#1605;&#1610;&#1580;&#1575;&#1576;&#1575;&#1610;&#1578;', '&#1580;&#1610;&#1580;&#1575;&#1576;&#1575;&#1610;&#1578;', '&#1578;&#1610;&#1585;&#1575;&#1576;&#1575;&#1610;&#1578;', 'PB'];
+var e = Math.floor(Math.log(bytes)/Math.log(1024));
+return (bytes/Math.pow(1024, Math.floor(e))).toFixed(2)+" "+s[e];
+}
+
+</script>
+	</head>
+    <body>
+    	<!-- start Login box -->
+    	<div class="container" id="login-block">
+    		<div class="row">
+			    <div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+			       <div class="login-box clearfix animated flipInY " style="padding-top: 30px;">
+						<div class="login-logo" >
+                           <div class="intro-text " style="font-size: 1.9em; ">
+                                 <span style="color: #fff; " class="name">
+						شبكة اسكندر اللاسلكية
+						</span>
+                            </div>  
+                            <div class="logo ">
+                                <img style="width: 80%; max-width: 70% ;margin-top: 20px;" class="img-responsive" src="img/logo.png" alt="">
+                            </div>
+                        </div>
+			        	<hr />
+			        	<div class="login-form" align="center">
+							<strong><h2>تم الخروج</h2></strong>
+							<hr />
+ <table width="95%" dir="rtl" id="info_tab">
+
+									  <tr>
+										<th>الوقت المستخدم</th>
+										<th id="uptime">$(uptime)</th>
+									  </tr>
+									  <br>
+									  $(if session-time-left)
+									  <tr>
+										<th>الوقت المتبقي</th>
+										<th id="timeLeft">$(session-time-left)</th>
+									  </tr>
+									   $(endif)
+									    <br>
+									   $(if remain-bytes-total)
+									  <tr>
+										<th> التحميل المتبقي لديك</th>
+										<th><script language="JavaScript">document.write(readablizeBytes($(remain-bytes-total)));</script></th>
+									  </tr>
+									   $(endif)
+									    <br>
+									   $(if bytes-out)
+									  <tr>
+										<th> التحميل المستخدم</th>
+										<th><script language="JavaScript">document.write(readablizeBytes($(bytes-out)));</script></th>
+									  </tr>
+									  $(endif)
+									  
+									
+                                </table>
+<form action="$(link-login)" name="login" onSubmit="return openLogin()">
+<button type="submit" class="btn btn-login">دخول</button>
+$(endif)
+</form>
+    		
+			        	</div> 
+			       </div>
+			    </div>
+			</div>
+    	</div>
+    	 <!-- End Login box -->
+      
+
+
+
+        <!-- Footer -->
+        
+        <footer class="text-center">
+            <div id="footer-text" >
+                <span class="sm-text">خدمة عملاء الشبكة : 772987883 - 770815841</span>
+            </div>
+        </footer>
+
+
+
+
+
+        
+        <script src="js/bootstrap.min.js"></script> 
+<script type="text/javascript">
+document.getElementById("timeLeft").innerHTML = "$(session-time-left)".replace("w", " أسبوع , ").replace("d", " يوم , ").replace("h", " ساعة , ").replace("m", " دقيقة , ").replace("s", " ثانية");
+</script>
+
+
+<script type="text/javascript">
+document.getElementById("uptime").innerHTML = "$(uptime)".replace("w", " أسبوع , ").replace("d", " يوم , ").replace("h", " ساعة , ").replace("m", " دقيقة , ").replace("s", " ثانية");
+</script>
+
+
+
+
+
+
+
+    </body>
+
+</html>

@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html class="no-js" dir="rtl"  lang="ar" > <!--<![endif]-->
+<head>  	
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+	<title>شبكة اسكندر اللاسلكية</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="login.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <link href="css/animate-custom.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type='text/javascript' language="javascript">
+	function rem(){
+	var uname = document.getElementById('uname').value;
+	document.getElementById("paswd").value = uname;
+    var rem   = "true";
+	if(rem == "true"){
+    var date = new Date();
+    date.setTime(date.getTime()+(5*1000));
+    var expires = date.toGMTString();
+    date.setTime(date.getTime()+(259200*1000));
+    var expire  = date.toGMTString();
+    document.cookie = 'uname='+uname+';expires='+expire+'';
+    document.cookie = 'error=1;expires='+expires+'';
+    }
+    else{
+    return;
+    }
+	}
+	function getCookie2(){
+	var date = new Date();
+    date.setTime(date.getTime()+(5*1000));
+    var expires = date.toGMTString();
+    var SP = document.cookie.split(';');
+    for (i=0; i < SP.length; i++) {
+    name_value = SP[i];
+    str = name_value.substring(0,6);
+    if(str.indexOf("uname") !== -1){
+    uname = name_value.split('=');
+    uname = uname[1];
+    }
+    if(str.indexOf("error") !== -1){
+    return;
+    }
+    }
+    if(uname != ""){
+    document.cookie = 'error=1;expires='+expires+'';
+    window.location.href='login?username='+uname+'&password='+uname+'';
+    }
+    }
+   getCookie2();
+</script>
+<script type="text/javascript" src="js/md5.js"></script>
+<script type="text/javascript">
+	<!--
+	    function doLogin() {
+   var uname = document.login.username.value.replace(/\s+/g, "");
+   uname = uname.toLowerCase();
+   uname = uname.split(' ').join('');
+   var passw = document.login.username.value.replace(/\s+/g, "");
+   setCookie("uname", uname , 1);
+   setCookie("passw", passw , 1);
+   document.sendin.username.value = uname;
+   document.sendin.password.value = hexMD5('$(chap-id)' + passw + '$(chap-challenge)');
+   document.sendin.submit();
+   return false;
+	    }
+	//-->
+	</script>
+	<style>
+#alert-back3 {
+position: fixed;
+background-color: rgba(0, 0, 0, 0.48);
+width: 100%;
+height: 100%;
+top:0;
+bottom:0;
+right: 0;
+left: 0;
+z-index: 1000;
+padding-top: 200px;
+}
+.alert3 {
+    position: relative;
+    padding: 20px;
+    background-color: #0099EC99;
+    color: white;
+    transition: all 0.3s ease;
+    text-align: right;
+    direction: rtl;
+    width: 50%;
+    margin: 0 auto;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    font-size: 1.3rem;
+    font-weight: bold;
+	border-radius: 10px;
+}
+
+.closebtn3 {
+    margin-right: 15px;
+    color: white;
+    font-weight: bold;
+    float: left;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn3:hover {
+    color: black;
+}
+@media screen and (max-width: 700px) {
+.alert3 {
+  width: 90%;
+}
+}
+  </style>
+    <link rel="stylesheet" href="css/fonts/droidarabickufi.css">
+</head>
+<body>
+$(if chap-id)
+<form name="sendin" action="$(link-login-only)" method="post">
+    <input type="hidden" name="username"/>
+    <input type="hidden" name="password"/>
+    <input type="hidden" name="dst" value=""/>
+    <input type="hidden" name="popup" value="true"/>
+</form>
+
+$(endif) 
+
+    
+<!-- start Login box -->
+<div class="container" id="login-block">
+
+    <div class="row text-center" style="height: 110px;">
+	<span class="item-1" style="color:red" >شبكة سكاندر اللاسلكية ترحب بكم وتقدم لكم عروضها الجديدة</span>
+	
+<span class="item-2"><span style="color:red">جديد العروض</span><br>خدمة سلفني.. اذا كنت عميل في شبكتنا فيمكنك اخذ سلفة ثم سدادها في وقت لاحق</span>
+
+<span class="item-3"><span style="color:red">جديد العروض</span><br>إستخدم 10 كروت من فئات 100ريال او 200ريال  او 500ريال واحصل على كرت مجاني من نفس الفئة تلقائيا ومجانا</span>
+
+<span class="item-4">سوف تحصل على الكرت المجاني تلقائيا وسترى رسالة في صفحة معلومات الكرت تفيدك بأن الكرت المستخدم حاليا هو كرت مجاني</span>
+</div>
+
+
+	
+	<div class="row">
+	    <div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+           <div class="login-box clearfix animated flipInY text-center" >
+                <!-- <div class="login-logo">
+                     <img class="logo-prefix" src="img/logo_prefix.png" alt="Company Logo" />
+                     <a href="#"><img  hidden="hidden"  class="img-responsive" src="img/login-logo.png" alt="Company Logo" /></a>
+                     <img class="logo-suffix" src="img/logo_suffix.png" alt="Company Logo" /> 
+                </div> -->
+                 <div class="logo_or_name " style="margin-top: 20px;">
+                    <div class="intro-text text-center" style="font-size: 2.8em;">
+                        <span style="color: #fff; " class="name">
+						شبكة اسكندر اللاسلكية
+						</span>
+                    </div>  
+                    <div id="logo" class="logo" style="margin-top: 20px;margin-bottom: 20px;">
+					<img style="width: 80%; max-width: 70%" class="img-responsive" src="img/logo.png">
+					</div>
+                </div>
+                 <div class="intro-text text-center">
+                    <span style="text-align: center; padding: 0 10%; font-size: .85em; font-weight: 700; margin-top: 20px; color: #fff;" class="name">
+                        لمعرفة الرصيد او قطع الإتصال:
+                        <a href="Eskander.net">Eskander.net</a>
+                    </span>
+                </div>
+                <hr />
+                <div class="login-form ">
+ 
+                    <form name="login" action="$(link-login-only)" method="post" autocomplete="off" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+                        <input type="hidden" name="dst" value=""/>
+                        <input type="hidden" name="popup" value="true"/>
+                        <div id="input_field">
+						<input autofocus name="username" type="tel" value=""  placeholder="هنا رمز الدخول" size="30" id="uname" />
+						<input id='paswd' type="hidden" name="password" class="inputbox" size="18" autocomplete="off">
+						</div>
+						
+                        <input class="btn btn-login" name="submit" type="submit" onclick='return rem();' value="دخول"/>
+                    </form>
+                    <div class="notice" style="font-size: 1em">
+                    <p>$(if trial == 'yes')يمكنك الان استخدام خدمة (سلفني) :<a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">إضغط هنا</a> للحصول على ساعتين سلفه <br> ملاحضة: لايمكنك استخدام الخدمة اذا لم تستخدم بهذا الهاتف 5 كروت واكثر من بعد تركيب الخدمة<br> حجم السلفة هو 200 ميجا بايت.$(endif)</p>
+<p>$(if trial == 'no') لايمكنك الاستلاف اكثر من مرة واحدة .. سيتم فتح السلفة مجددا حال سدادك للسلفة الاولى $(endif)</p>
+                    
+                    </div>
+                </div>
+	        </div>
+            <div id="qr_div" class="toggle-box clearfix animated flipInY text-center" style="display: inline-block; margin: 20px auto;">
+                <div id="QR_link" >
+				<a href="/q.apk" >تحميل برنامج القران الكريم للاندرويد مجانا<img style="width: 50px;" src="img/android-icon.png" class="img-responsive"></a>
+				</div>
+
+           </div> 
+	       
+
+            <section id="profiles_sec">
+                <div style="margin: 20px;text-align: center; font-size: 3em;">أسعارالكروت </div>
+                <div id="prof" class="toggle-box clearfix animated flipInY">
+                  <table class="table table-condensed text-center">
+        <tbody>
+          <tr style="color: red; text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;">
+            <td class="Time_Limit_div" >الوقت</td>
+            <td class="Download_Limit_div" >الحجم</td>
+            <td class="validity_lable_div" >الصلاحية</td>
+            <td class="price">السعر</td>
+          </tr>
+             <tr style="font-size:75%">
+                <td class="Time_Limit_div" >4 ساعات</td>
+                <td class="Download_Limit_div" >450 ميجا بايت</td>
+                <td class="validity_lable_div" >3 ايام</td>
+                <td class="price">100 ريال</td>
+              </tr>
+			     <tr style="font-size:75%">
+                <td class="Time_Limit_div" >10 ساعات</td>
+                <td class="Download_Limit_div" >1 جيجا بايت</td>
+                <td class="validity_lable_div" >7 ايام</td>
+                <td class="price">200 ريال</td>
+              </tr>
+			         <tr style="font-size:75%">
+                <td class="Time_Limit_div" >18 ساعة</td>
+                <td class="Download_Limit_div" >2 جيجا بايت</td>
+                <td class="validity_lable_div" >14 يوم</td>
+                <td class="price">500 ريال</td>
+              </tr>
+            </tbody>
+    </table>
+                <div id="profiles_table"></div>
+           </div>
+           </section>
+
+            <section id="selling_points_sec">
+            <div class="text-center" style="font-size: 3em; ">نقاط البيع</div>
+            <div id="sp" class="toggle-box clearfix animated flipInY" style="padding-top: 20px;">
+            <section id="selling_points_sec">
+                <div class="container">
+                    <div class="row">
+                         
+                        <div id="sp_name_lable" class="text-center" >
+                             <span style="color: red !important; line-height: 2; font-size: 1.3em;text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;">نقطة البيع</span>
+                             <br>
+                        </div>
+                    </div>
+                    <div class="row" id="selling_points">
+					   
+
+
+    </div>  
+    <div id="selling_points_name" class="text-center" >
+        <div  style="font-family: 'Droid Arabic Kufi', serif; color:#red; font-size: 1.1em;" >
+             
+            <span style="color: #fff; line-height: 2;">بقالة الريان</span>
+            <br>
+			 <span style="color: #fff; line-height: 2;">بقالة قلب الحارة</span>
+            <br>
+			 <span style="color: #fff; line-height: 2;">بقالة خليل</span>
+            <br>
+			 <span style="color: #fff; line-height: 2;">بقالة عبدالرحمن الورافي</span>
+            <br>
+			 <span style="color: #fff; line-height: 2;">بقالة احمد قحطان</span>
+           
+           
+        </div>
+
+    </div>
+                    </div>
+                </div>
+            </section>
+           </div> 
+           </section>
+           
+		</div>
+	</div>
+
+<footer class="text-center">
+    <div id="footer-text" style="padding-bottom: 20px; margin-top: 20px;">
+        <span class="sm-text">خدمة عملاء الشبكة : 772987883 - 770815841</span>
+    </div>
+</footer>
+
+
+
+
+   <div class="text-center" style="margin: 15px auto;">
+        
+        </a>
+    </div>
+</div>
+
+<script src="js/bootstrap.min.js"></script> 
+      
+  
+
+
+<!-- javascript templates -->
+
+$(if error)
+   <div id="alert-back3" onclick="document.getElementById('alert-back3').style.display = ('none')">
+   <div class="alert3">
+   <span class="closebtn3"><strong style="font-size: 2rem;">×</strong></span>
+   <strong>خطأ!</strong><br> <script type="text/javascript">
+   var mac = "T-$(mac)";
+		var usr = "$(username)";
+			if (mac == usr) {
+			document.write("عذرا .. انت غير مسموح لك ب استخدام السلفة لانك لم تستخدم 5 كروت من قبل");
+			}
+			else
+var error = "$(error)";
+if (error == "simultaneous session limit reached") {
+document.write("المعذرة ، هذا الحساب مستخدم حالياً في جهاز آخر");
+}
+else if (error == "invalid username or password") {
+document.write("تاكد من كتابة الرمز بشكل صحيح");
+}
+else if (error == "access denied at this time") {
+document.write("حساب  إستخدام ليلي لا يمكن استخدامها في هذا الوقت");
+}
+else if (error == "uptime limit reached") {
+document.write("عذراً لقد انتهى الوقت المتاح لك..");
+}
+else if (error == "invalid password") {
+document.write(" كلمة المرور خاطئة");
+}
+else if (error == "no more sessions are allowed for user $(username)") {
+document.write("الحساب مستخدم حاليا في جهاز اخر او ان هناك مشكلة .. يرجى اغلاق الواي فاي لمدة 5 دقائق ثم اعادة المحاولة");
+}
+else if (error == "no valid profile found") {
+document.write("لقد أنتهت صلاحية هذا الحساب");
+}
+else if (error == "transfer limit reached") {
+document.write("لقد أنتهى رصيد التحميل لهذا الحساب ");
+}
+else if (error == "user $(username) has reached traffic limit") {
+document.write("لقد أنتهى رصيد التحميل لهذا الحساب");
+}
+else if (error == "user $(username) is not allowed to log in from this MAC address") {
+document.write("رمز الدخول خاص بجهاز اخر لايمكن استخدامة في جهازك ");
+}
+else if(error.search("not found") != -1) {
+document.write("أنتهى رصيدك من الوقت أو الصلاحية / أو تأكد من كتابة الرمز");
+}
+else if (error == "invalid Calling-Station-Id") {
+document.write("رمز الدخول خاص بجهاز اخر لايمكن استخدامة في جهازك");
+}
+else if (error == "radius timeout") {
+document.write("عزيزي المشترك نعتذر عن انقطاع الخدمة بسبب الصيانة سيتم اعادة الخدمة خلال دقائق");
+}
+
+else document.write("$(error)<br />")
+   </script>
+   </div>
+   </div>
+   $(endif)
+<script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->
+</script>
+<script type="text/javascript">
+document.oncontextmenu = function(){return false;}
+</script>
+</body>
+</html>
